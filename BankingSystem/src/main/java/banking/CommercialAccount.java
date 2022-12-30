@@ -2,6 +2,7 @@ package banking;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Account implementation for commercial (business) customers.<br><br>
@@ -11,16 +12,20 @@ import java.util.List;
  */
 public class CommercialAccount  {
 	private List<Person> authorizedUsers;
+	private AtomicInteger i;
+	Account account;
 
 	public CommercialAccount(Company company, Long accountNumber, int pin, double startingDeposit) {
-		// complete the function
+		authorizedUsers.set(i.incrementAndGet(),authorizedUsers.get(i.get()));
+
+
 	}
 
 	/**
 	 * @param person The authorized user to add to the account.
 	 */
 	protected void addAuthorizedUser(Person person) {
-		// complete the function
+		authorizedUsers.add(person);
 	}
 
 	/**
